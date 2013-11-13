@@ -1,0 +1,27 @@
+<?php
+/* @var $this TesteController */
+/* @var $model Teste */
+
+$this->breadcrumbs=array(
+	'Testes'=>array('index'),
+	$model->id_teste,
+);
+
+$this->menu=array(
+	array('label'=>'List Teste', 'url'=>array('index')),
+	array('label'=>'Create Teste', 'url'=>array('create')),
+	array('label'=>'Update Teste', 'url'=>array('update', 'id'=>$model->id_teste)),
+	array('label'=>'Delete Teste', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_teste),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Teste', 'url'=>array('admin')),
+);
+?>
+
+<h1>View Teste #<?php echo $model->id_teste; ?></h1>
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'id_teste',
+		'teste',
+	),
+)); ?>
